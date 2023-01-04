@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1" />
+    <title>React App</title>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+
+    <div id="root"></div>
+    <script type="text/babel">
+    class MyHeader extends React.Component {
+        render() {
+            return (
+            <div>
+            <h1>Hello Style!</h1>
+            <p>Add a little style!</p>
+            </div>
+            );
+        }
+        }
+
+        ReactDOM.render(<MyHeader />, document.getElementById('root'));
+</script>
+
+  </body>
+</html>
+
