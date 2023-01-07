@@ -14,18 +14,35 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: cyan;
+  min-height: 8vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: left;
+  justify-content: left;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: black;
+  vertical-align: center;
+}
+
+.App-header FontAwesomeIcon {
+  text-align: right;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.list-group {
+  align-items: left;
+}
+
+.list-group .list-group-item img{
+  height: 3em;
+  width: 3em;
+}
+
+.list-group-item input {
+  width: 3em;
 }
 
 @keyframes App-logo-spin {
