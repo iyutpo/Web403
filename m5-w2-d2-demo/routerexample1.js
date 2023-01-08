@@ -23,8 +23,43 @@ export default function App() {
             </li>
           </ul>
         </nav>
-      </div>
-     
+
+        <Switch>
+          <Route path='/about'>
+            <About />
+          </Route>
+          <Route path='/users'>
+            <Users />
+          </Route>
+          <Route path='/'>
+            <Home />
+          </Route>
+        </Switch>
+      </div> 
+
+      
     </Router>
+
   );
 }
+
+
+function Home() {
+  return (
+    <div>
+      <h2>Home</h2>
+      <p>This is home</p>
+    </div>
+  );
+}
+
+
+function About() {
+  return <h2>About</h2>
+}
+
+
+function Users() {
+  return <h2>Users</h2>
+}
+
