@@ -2,6 +2,7 @@
 // and define them in e.g. .env.local (if you're using Create React App)
 
 // Authorization screen base URL
+// https://github.com/settings/applications/2081881   API LINK
 // e.g. https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/#1-request-a-users-github-identity
 export const authorizationUrl = 'https://github.com/login/oauth/authorize';
 // https://docs.github.com/en/developers/apps/authorizing/authorizing-oauth-apps
