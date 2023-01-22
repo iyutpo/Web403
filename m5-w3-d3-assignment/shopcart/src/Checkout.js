@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Modal, Button } from 'react-bootstrap';
+import FacebookLogin from 'react-facebook-login';
 
 
 function LoginForm() {
@@ -14,7 +15,7 @@ function LoginForm() {
     )
   }
 
-  
+
 function Checkout(props) {
     const values = [true];
     const [fullscreen, setFullscreen] = useState(true);
@@ -23,6 +24,18 @@ function Checkout(props) {
     function handleShow(breakpoint) {
         setFullscreen(breakpoint);
         setShow(true);
+    }
+
+    const [login, setLogin] = useState(false);    // set up login
+    const [data, setData] = useState({});   // set up fb data
+    const [picture, setPicture] = useState('');     // set up fb profile image
+    const responseFacebook = (response) => {
+        setData(response);
+        if (response.accessToken) {
+            setLogin(true);
+        } else {
+            setLogin(false);
+        }
     }
 
     return (
@@ -40,19 +53,7 @@ function Checkout(props) {
                 </Modal.Header>
                 <Modal.Body>Modal body content</Modal.Body>
             </Modal>
-            <h3>Please login using one of the following: </h3>
-                {/* Login Form */}
-                <LoginForm />
-
-                {/* FB Login Button */}
-                <FacebookLogin
-                  appId='498407135741665'
-                  autoLoad={false}
-                  fileds='name,email,picture'
-                  scope='public_profile,user_friends'
-                  callback={responseFacebook}
-                  icon='fa-facebook'
-                />
+            
         </React.Fragment>
         </>
     );
