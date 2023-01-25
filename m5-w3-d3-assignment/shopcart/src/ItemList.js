@@ -4,16 +4,61 @@ import iwatch from './m5-assignment/products/iwatch.jpg';
 import mug from './m5-assignment/products/mug.jpg';
 import wallet from './m5-assignment/products/wallet.jpg';
 import "./ItemList.css";
-import {Modal, Button} from 'react-bootstrap';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Cart from './Checkout';
+import Modal from 'react-modal';
+import {Modal as BModal, Button} from 'react-bootstrap';
 
-const NewPage = () => {
+
+
+
+
+
+function Checkout(props) {
+    const values = [true];
+    const [fullscreen, setFullscreen] = useState(true);
+    const [show, setShow] = useState(false);
+
+    // function handleShow(breakpoint) {
+    //     setFullscreen(breakpoint);
+    //     setShow(true);
+    // }
+
+    const [login, setLogin] = useState(false);    // set up login
+    const [data, setData] = useState({});   // set up fb data
+    const [picture, setPicture] = useState('');     // set up fb profile image
+    const responseFacebook = (response) => {
+        setData(response);
+        if (response.accessToken) {
+            setLogin(true);
+        } else {
+            setLogin(false);
+        }
+    }
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <div>
-            <h1>This is my new page</h1>
+            <Button variant="primary" onClick={handleShow}>
+                Check Out
+            </Button>
+
+            <BModal show={show} onHide={handleClose}>
+                <BModal.Header closeButton>
+                <BModal.Title>Modal Title</BModal.Title>
+                </BModal.Header>
+                <BModal.Body>
+                <p>Modal content goes here.</p>
+                </BModal.Body>
+                <BModal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Close
+                </Button>
+                <Button variant="primary">Save Changes</Button>
+                </BModal.Footer>
+            </BModal>
         </div>
-    )
+    );
 }
 
 
@@ -55,38 +100,38 @@ function ItemList() {
 
 
     return (
-        <BrowserRouter>
         
-            <div>
-                <ul class="list-group">
-                    {items.map(item => (
-                        <li className="list-group-item d-flex align-items-start" key={item.id}>
-                            {item.name}
-                            <img src={item.image} alt="" onClick={() => toggleModal(item.id)}/>
-                            {/* Pop up Image */}
-                            <div id='myModal' className='modal'>
-                                <Modal isOpen={item.id === openImageId} onRequestClose={() => toggleModal(null)} > 
-                                    <span class="close">&times;</span>
-                                    <img src={item.image} className='modal-content'/>
-                                    <div id="caption">Rating: 3.5/5</div>
-                                </Modal>
-                            </div>
-                            
-                            <span>quantity:  
-                                <input value={item.quantity}
-                                        onChange={(event) => handleChange(event, item.id)} />
-                            </span>
-                            <button onClick={() => handleOnclickPlus(item.id)}>+</button>
-                            <button onClick={() => handleOnclickMinus(item.id)}>-</button>
-                            <Cart  />
-                        </li>
-                    ))}
-                    
-                </ul>
+        <div>
+            <ul class="list-group">
+                {items.map(item => (
+                    <li className="list-group-item d-flex align-items-start" key={item.id}>
+                        {item.name}
+                        <img src={item.image} alt="" onClick={() => toggleModal(item.id)}/>
+                        {/* Pop up Image */}
+                        <div id='myModal' className='modal'>
+                            <Modal isOpen={item.id === openImageId} onRequestClose={() => toggleModal(null)} > 
+                                <span class="close">&times;</span>
+                                <img src={item.image} className='modal-content'/>
+                                <div id="caption">Rating: 3.5/5</div>
+                            </Modal>
+                        </div>
+                        
+                        <span>quantity:  
+                            <input value={item.quantity}
+                                    onChange={(event) => handleChange(event, item.id)} />
+                        </span>
+                        <button onClick={() => handleOnclickPlus(item.id)}>+</button>
+                        <button onClick={() => handleOnclickMinus(item.id)}>-</button>
+                        
+                        
+                        
+                    </li>
+                ))}
                 
-                
-            </div>
-        </BrowserRouter>
+            </ul>
+            
+            
+        </div>
         
     );
 }
