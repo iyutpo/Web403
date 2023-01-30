@@ -37,6 +37,8 @@ function Checkout(props) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    
+
     return (
         <div>
             <Button variant="primary" onClick={handleShow}>
@@ -62,7 +64,7 @@ function Checkout(props) {
 }
 
 
-function ItemList() {
+function ItemList(props) {
     const [items, setItems] = useState([
         { id: 0, name: 'Unisex Cologne', image: cologne, quantity: 0, open: false },
         { id: 1, name: 'Apple iWatch', image: iwatch, quantity: 0, open: false },
@@ -99,9 +101,24 @@ function ItemList() {
     }
 
 
+    const { listItem } = props;
+
     return (
         
         <div>
+            <button className='mx-1 mt-2 bg-info text-white border-0' 
+                    onClick={() => props.onSort(listItem, 'lowest')}
+            >Lowest
+            </button>
+            <button className='mx-1 mt-2 bg-info text-white border-0' 
+                    onClick={() => props.onSort(listItem, 'normal')}
+            >Normal
+            </button>
+            <button className='mx-1 mt-2 bg-info text-white border-0' 
+                    onClick={() => props.onSort(listItem, 'highest')}
+            >Highest
+            </button>
+
             <ul class="list-group">
                 {items.map(item => (
                     <li className="list-group-item d-flex align-items-start" key={item.id}>
