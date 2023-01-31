@@ -27,8 +27,8 @@ class InventoryList extends Component {
         await fetch(`/api/inventory/${id}`, {
             method: 'DELETE',
             headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
             }
         })
         console.log('Remove Done!!');

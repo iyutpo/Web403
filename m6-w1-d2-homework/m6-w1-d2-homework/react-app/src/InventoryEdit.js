@@ -46,8 +46,8 @@ class InventoryEdit extends Component {
         await fetch('/api/inventory', {
             method: (item._id) ? 'PUT' : 'POST',
             headers: {
-                'Accept': 'application/json',
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
             },
             body: JSON.stringify(item),
         });
