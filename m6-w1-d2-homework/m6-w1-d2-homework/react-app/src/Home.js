@@ -10,17 +10,16 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <AppNavbar>
-                    <Container fluid>
-                        <Button className='m-5 nav bg-light'>
-                            <Link
-                                to='/inventories'
-                                className='nav-link'
-                            >Manage Inventory List
-                            </Link>
-                        </Button>
-                    </Container>
-                </AppNavbar>
+                <AppNavbar />
+                <Container fluid>
+                    <Button className='m-5 nav bg-light'>
+                        <Link
+                            to='/inventories'
+                            className='nav-link'
+                        >Manage Inventory List
+                        </Link>
+                    </Button>
+                </Container>
             </div>
         )
     }

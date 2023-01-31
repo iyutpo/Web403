@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './Home';
-import { Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import InventoryList from './InventoryList';
 import InventoryEdit from './InventoryEdit';
 import './App.css';

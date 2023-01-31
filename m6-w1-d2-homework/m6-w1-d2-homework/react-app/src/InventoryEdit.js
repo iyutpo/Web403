@@ -117,7 +117,7 @@ class InventoryEdit extends Component {
                                 <Label
                                     for='status'
                                     className='h5 mt-3'
-                                >Quantity
+                                >Status
                                 </Label>
                                 <Input
                                     type='text'
