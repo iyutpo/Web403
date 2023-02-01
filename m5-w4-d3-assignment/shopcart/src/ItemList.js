@@ -8,62 +8,6 @@ import Modal from 'react-modal';
 import {Modal as BModal, Button} from 'react-bootstrap';
 
 
-
-
-
-
-function Checkout(props) {
-    const values = [true];
-    const [fullscreen, setFullscreen] = useState(true);
-    const [show, setShow] = useState(false);
-
-    // function handleShow(breakpoint) {
-    //     setFullscreen(breakpoint);
-    //     setShow(true);
-    // }
-
-    const [login, setLogin] = useState(false);    // set up login
-    const [data, setData] = useState({});   // set up fb data
-    const [picture, setPicture] = useState('');     // set up fb profile image
-    const responseFacebook = (response) => {
-        setData(response);
-        if (response.accessToken) {
-            setLogin(true);
-        } else {
-            setLogin(false);
-        }
-    }
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
-    
-
-    return (
-        <div>
-            <Button variant="primary" onClick={handleShow}>
-                Check Out
-            </Button>
-
-            <BModal show={show} onHide={handleClose}>
-                <BModal.Header closeButton>
-                <BModal.Title>Modal Title</BModal.Title>
-                </BModal.Header>
-                <BModal.Body>
-                <p>Modal content goes here.</p>
-                </BModal.Body>
-                <BModal.Footer>
-                <Button variant="secondary" onClick={handleClose}>
-                    Close
-                </Button>
-                <Button variant="primary">Save Changes</Button>
-                </BModal.Footer>
-            </BModal>
-        </div>
-    );
-}
-
-
 function ItemList(props) {
     const [items, setItems] = useState([
         { id: 0, name: 'Unisex Cologne', image: cologne, quantity: 0, open: false },
@@ -75,6 +19,7 @@ function ItemList(props) {
     const toggleModal = (id) => {
         setOpenImageId(id === openImageId ? null : id);
     }
+    const { listItem } = props;
     
 
     // handlers
@@ -101,7 +46,6 @@ function ItemList(props) {
     }
 
 
-    const { listItem } = props;
 
     return (
         
@@ -111,7 +55,7 @@ function ItemList(props) {
             >Lowest
             </button>
             <button className='mx-1 mt-2 bg-info text-white border-0' 
-                    onClick={() => props.onSort(listItem, 'normal')}
+                    onClick={() => props.onSort(listItem, 'default')}
             >Normal
             </button>
             <button className='mx-1 mt-2 bg-info text-white border-0' 

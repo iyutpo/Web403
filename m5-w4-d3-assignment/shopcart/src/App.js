@@ -73,8 +73,14 @@ class App extends React.Component {
   onSort(itemList, sortType) {
     console.log(itemList);
     itemList.sort((a, b) => {
-      const isReversed = sortType === "lowest" ? 1 : -1;
-      return isReversed * a.price.localeCompare(b.price);
+      switch (sortType) {
+        case 'lowest':
+          return a.price - b.price;
+        case 'highest':
+          return b.price - a.price;
+        default:
+          return a.id - b.id;
+      }
     });
     this.setState({ sortType });
   }
@@ -105,13 +111,15 @@ class App extends React.Component {
             <Route path='/Checkout'>
 
             </Route>
+
+            <Route path='/' element={<ItemList sortType={this.state.sortType} itemList={this.state.items} onSort={this.onSort}/>} />
           </Routes>
         </Router>
-        <ItemList 
+        {/* <ItemList 
           sortType={this.state.sortType}
           itemList={this.state.items}
           onSort={this.onSort.bind(this)}
-        />
+        /> */}
       </div>
     );
   }
