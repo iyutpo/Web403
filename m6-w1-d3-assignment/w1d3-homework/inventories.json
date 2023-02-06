@@ -1,0 +1,8 @@
+{ "prodname": "journal", "qty": 25, "price": 10, "status": "S" }
+{ "prodname": "notebook", "qty": 50, "price": 8, "status": "T" }
+{ "prodname": "paper", "qty": 100, "price": 5, "status": "R" }
+{ "prodname": "planner", "qty": 75, "price": 7, "status": "R" }
+{ "prodname": "postcard", "qty": 45, "price": 3, "status": "S" }
+
+
+

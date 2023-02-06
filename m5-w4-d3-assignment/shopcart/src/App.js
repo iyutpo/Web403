@@ -54,7 +54,7 @@ class App extends React.Component {
       login: false,
       data: null,
       picture: '',
-      sortType: 'lowest',
+      sortType: 'normal',
       itemList: '',
     }
     this.responseFacebook = this.responseFacebook.bind(this);
@@ -74,12 +74,12 @@ class App extends React.Component {
     console.log(itemList);
     itemList.sort((a, b) => {
       switch (sortType) {
+        case 'normal':
+          return a.id - b.id;
         case 'lowest':
           return a.price - b.price;
         case 'highest':
           return b.price - a.price;
-        default:
-          return a.id - b.id;
       }
     });
     this.setState({ sortType });
@@ -108,9 +108,7 @@ class App extends React.Component {
 
           {/* Define Routers */}
           <Routes>
-            <Route path='/Checkout'>
-
-            </Route>
+            <Route path='/Checkout' element={<Checkout /> } />
 
             <Route path='/' element={<ItemList sortType={this.state.sortType} itemList={this.state.items} onSort={this.onSort}/>} />
           </Routes>

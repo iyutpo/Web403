@@ -55,7 +55,7 @@ function ItemList(props) {
             >Lowest
             </button>
             <button className='mx-1 mt-2 bg-info text-white border-0' 
-                    onClick={() => props.onSort(listItem, 'default')}
+                    onClick={() => props.onSort(listItem, 'normal')}
             >Normal
             </button>
             <button className='mx-1 mt-2 bg-info text-white border-0' 
