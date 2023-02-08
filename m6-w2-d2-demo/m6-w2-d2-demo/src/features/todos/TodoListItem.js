@@ -70,4 +70,4 @@ const TodoListItem = ({ id }) => {
   )
 }
 
-export de
+export default TodoListItem
