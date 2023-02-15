@@ -1,0 +1,20 @@
+{
+  "name": "collapsible-tree-w-vx",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://codesandbox.io/s/n3w687vmqj",
+  "main": "index.js",
+  "dependencies": {
+    "@vx/gradient": "0.0.192",
+    "@vx/group": "0.0.190",
+    "@vx/hierarchy": "0.0.179",
+    "@vx/shape": "0.0.179",
+    "classnames": "2.2.6",
+    "d3-hierarchy": "1.1.9",
+    "prop-types": "15.7.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-move": "6.5.0"
+  }
+}

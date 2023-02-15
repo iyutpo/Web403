@@ -1,0 +1,50 @@
+{
+  "name": "demo",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-vertex/core": "^4.0.0",
+    "@react-vertex/geometry-hooks": "^4.0.0",
+    "@react-vertex/material-hooks": "^4.0.0",
+    "@react-vertex/math-hooks": "^3.0.0",
+    "@react-vertex/orbit-camera": "^4.0.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@vx/gradient": "^0.0.199",
+    "@vx/group": "^0.0.199",
+    "@vx/hierarchy": "^0.0.199",
+    "@vx/shape": "^0.0.199",
+    "react": "16.8.6",
+    "react-bootstrap": "^1.6.1",
+    "react-dom": "16.8.6",
+    "react-move": "^2.8.0",
+    "react-router-dom": "^5.3.1",
+    "react-scripts": "2.1.8",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

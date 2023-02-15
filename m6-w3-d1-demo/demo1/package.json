@@ -1,0 +1,19 @@
+{
+  "name": "animated-bar-chart-using-react-move",
+  "version": "1.0.0",
+  "description": "Bar chart with enter/leave/update transitions, built with React and react-move",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "react": "16.3.2",
+    "react-dom": "16.3.2",
+    "react-move": "2.8.0",
+    "react-scripts": "^1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

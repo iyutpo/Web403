@@ -1,0 +1,34 @@
+{
+  "name": "react-vertex-sphere-of-spheres",
+  "version": "1.0.0",
+  "description": "Starter sandbox for React Vertex",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@react-vertex/core": "3.0.0",
+    "@react-vertex/dom-hooks": "1.11.0",
+    "@react-vertex/geometry-hooks": "3.0.0",
+    "@react-vertex/material-hooks": "3.0.0",
+    "@react-vertex/math-hooks": "2.0.0",
+    "@react-vertex/orbit-camera": "3.0.0",
+    "d3-timer": "1.0.9",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-scripts": "^1.1.4"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
